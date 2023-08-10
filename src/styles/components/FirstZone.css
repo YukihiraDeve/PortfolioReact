@@ -3,6 +3,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Kanit', sans-serif;
+    overflow-x: hidden;
 }
 
 .root {
@@ -33,6 +34,11 @@ body, html {
     z-index: 0; /* Pour que le texte soit derrière l'image */
     -webkit-text-stroke: 4px black;  /* Pour les navigateurs Webkit comme Chrome et Safari */
     text-stroke: 4px black;  /* Propriété standard, mais pas encore largement prise en charge */
+
+
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-out;
 }
 
 .developpeur {
@@ -42,10 +48,11 @@ body, html {
 }
 
 .devo {
-    right: 0;
+    right: 2%; /* changement ici, donner un peu d'espace sur le côté droit */
     top: 50%;
-    transform: translateY(-50%); /* Centrer verticalement */
+    transform: translateY(-50%);
 }
+
 
 .photographe {
     position: absolute;
