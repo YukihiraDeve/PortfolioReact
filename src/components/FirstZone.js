@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import moi21 from '../assets/moi2.png';
 import '../styles/components/FirstZone.css';
 
@@ -14,8 +14,14 @@ const FirstZone = () => {
         setPosition((position + 1) % 3);
     }
 
+    // Ajouter un effet pour démarrer l'animation automatique
+    useEffect(() => {
+        const intervalId = setInterval(rotatePositions, 3000); // Changer la position toutes les 3 secondes
+        return () => clearInterval(intervalId);  // Nettoyer l'effet secondaire lorsque le composant est démonté
+    }, [position]);
+
     return (
-        <div className="root" onClick={rotatePositions}>
+        <div className="root">
             <div className="rectangle10"></div>
 
             <p 
