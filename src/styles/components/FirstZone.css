@@ -1,0 +1,124 @@
+/* Styles généraux */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moi {
+    width: 47.75rem;
+    height: 85.375rem;
+    z-index: 1; /* Pour que l'image soit au-dessus du texte "Développeur" et "DevOPS", mais sous "Photographie" */
+}
+
+.text {
+    position: absolute;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 14.375rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 87.5%; /* 12.57813rem */
+    text-transform: uppercase;
+    z-index: 0; /* Pour que le texte soit derrière l'image */
+    -webkit-text-stroke: 4px black;  /* Pour les navigateurs Webkit comme Chrome et Safari */
+    text-stroke: 4px black;  /* Propriété standard, mais pas encore largement prise en charge */
+}
+
+.developpeur {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.devo {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.photographe {
+    position: absolute;
+    color: #000;
+    z-index: 2; /* Pour que ce texte soit au-dessus de l'image */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer par rapport à l'image */
+    -webkit-text-stroke: 4px white;  /* Pour les navigateurs Webkit comme Chrome et Safari */
+    text-stroke: 4px white;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .moi {
+        width: 80%;  /* Réduire la largeur de l'image à 80% de sa taille originale */
+        height: auto;  /* Garder le ratio d'aspect de l'image */
+        max-height: 60vh; /* Limiter la hauteur à 60% de la hauteur de la fenêtre de visualisation */
+    }
+
+    .text {
+        font-size: 5rem;  /* Réduire la taille de la police */
+        -webkit-text-stroke: 2px black;  /* Réduire l'épaisseur du contour */
+        text-stroke: 2px black;
+    }
+
+    .photographe {
+        top: 80%;  /* Repositionner légèrement le texte pour s'adapter à la taille de l'image réduite */
+        font-size: 6rem;  /* Ajuster la taille de la police */
+        -webkit-text-stroke: 2px white; 
+        text-stroke: 2px white;
+    }
+}
+
+/* Styles pour les téléphones */
+/* Styles pour les téléphones */
+@media (max-width: 480px) {
+    .root {
+        flex-direction: column; 
+        height: 70vh; 
+        overflow: hidden; 
+    }
+
+    .moi {
+        width: auto;  
+        height: 100vh;
+        object-fit: cover; 
+        margin: 0; 
+    }
+
+    .text {
+        font-size: 2rem;  
+        -webkit-text-stroke: 1px black;  
+        text-stroke: 1px black;
+        padding: 0 0.5rem;
+    }
+
+    .photographe {
+        top: 70%; /* Remontez un peu le texte "photographe" */
+        left: 50%;
+        transform: translateX(-50%); 
+        font-size: 2.5rem;
+        -webkit-text-stroke: 1px white;
+        text-stroke: 1px white;
+    }
+
+    .developpeur, .devo {
+        top: 55%;  /* Remontez un peu ces textes aussi */
+        font-size: 1.8rem;
+    }
+
+    .devo {
+        right: 0.5rem; 
+    }
+}
+

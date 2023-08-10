@@ -1,12 +1,17 @@
 import React from 'react';
-import "../index.css";
+import moi21 from '../assets/moi2.png';
+import '../styles/components/FirstZone.css';
 
 const FirstZone = () => {
-    return (
-        <div>
-             <h1 className="text-3xl font-bold underline">FirstZone</h1>
-        </div>
-    );
-};
+        return (
+            <div className="root">
+                <div className="rectangle10"></div>
+                <p className="text developpeur">Developpeur</p>
+                <p className="text devo">Devo</p>
+                <img src={moi21} alt="Profile" className="moi"/>
+                <p className="text photographe">Photographe</p>
+            </div>
+        );
+    };
 
 export default FirstZone;
