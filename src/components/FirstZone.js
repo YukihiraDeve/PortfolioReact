@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import moi21 from '../assets/moi2.png';
 import '../styles/components/FirstZone.css';
 
+
 const FirstZone = () => {
     const [position, setPosition] = useState(0);
     const positions = [
